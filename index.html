@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ResumeIQ — ATS Resume Checker</title>
+<meta name="description" content="Check how your resume performs against a job description before the ATS decides. Instant match score, keyword analysis, and recommendations." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="container nav-inner">
+
+    <a href="#top" class="brand">
+      <svg class="brand-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
+        <path d="M6 2.5h9l4.5 4.5v14.5H6z"/>
+        <path d="M15 2.5V7h4.5"/>
+        <path d="M8.7 12h6.6"/>
+        <path d="M8.7 15h6.6"/>
+        <path d="M8.7 18h4"/>
+      </svg>
+      <span>ResumeIQ</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#checker">Check Resume</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#results">Results</a>
+    </nav>
+
+    <a href="#checker" class="btn-glow" id="start-analysis-btn">Start Analysis <span aria-hidden="true">→</span></a>
+
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero">
+    <div class="hero-bg-glow glow-a" aria-hidden="true"></div>
+    <div class="hero-bg-glow glow-b" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+
+      <div class="hero-copy reveal">
+
+        <p class="credit-text">DESIGNED &amp; DEVELOPED BY<br><span>ARSHAD</span></p>
+
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          SMART RESUME ANALYSIS
+        </div>
+
+        <h1 class="hero-title">
+          Know how your resume<br>
+          performs before<br>
+          <span class="highlight">the ATS decides.</span>
+        </h1>
+
+        <p class="hero-sub">
+          Upload your resume, paste a job description, and get an instant
+          ATS-style match score, keyword breakdown, and tailored
+          recommendations — in seconds.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#checker" class="btn-primary">Run ATS Analysis <span aria-hidden="true">→</span></a>
+          <a href="#how-it-works" class="btn-secondary">See how it works</a>
+        </div>
+
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="scan-card">
+
+          <div class="scan-card-header">
+            <div class="candidate-avatar">R</div>
+            <div class="candidate-info">
+              <span class="candidate-name">resume_final.pdf</span>
+              <span class="candidate-role">Scanning document…</span>
+            </div>
+            <span class="scan-live-badge">Live</span>
+          </div>
+
+          <div class="resume-lines">
+            <span class="r-line w-90 hit"></span>
+            <span class="r-line w-70"></span>
+            <span class="r-line w-80 hit"></span>
+            <span class="r-line w-55"></span>
+            <span class="r-line w-85 hit"></span>
+            <span class="r-line w-60"></span>
+          </div>
+
+          <div class="scan-sweep"></div>
+
+          <div class="scan-progress-row">
+            <span>Analyzing</span>
+            <span>78%</span>
+          </div>
+          <div class="scan-progress-track">
+            <div class="scan-progress-fill"></div>
+          </div>
+
+          <div class="skill-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Leadership</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW IT WORKS
+  ============================================================ -->
+  <section id="how-it-works" class="how-section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="section-label">PROCESS</p>
+        <h2 class="section-title">How it works</h2>
+        <p class="section-sub">Three steps between you and a clearer picture of your ATS match.</p>
+      </div>
+
+      <div class="how-grid">
+
+        <div class="how-step reveal">
+          <span class="how-num">01</span>
+          <h3>Upload your resume</h3>
+          <p>Upload a PDF, DOCX, or TXT resume.</p>
+        </div>
+
+        <div class="how-step reveal">
+          <span class="how-num">02</span>
+          <h3>Add the target role</h3>
+          <p>Paste the job description you want to target.</p>
+        </div>
+
+        <div class="how-step reveal">
+          <span class="how-num">03</span>
+          <h3>Get your ATS insights</h3>
+          <p>Receive an estimated match score, keyword insights, and recommendations.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CHECKER
+  ============================================================ -->
+  <section id="checker" class="checker-section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="section-label">GET STARTED</p>
+        <h2 class="section-title">Run your ATS check</h2>
+        <p class="section-sub">Upload your resume and paste the job description to get an instant match analysis.</p>
+      </div>
+
+      <div class="checker-grid">
+
+        <!-- Resume upload card -->
+        <div class="checker-card reveal">
+          <div class="card-heading">
+            <span class="card-number">01</span>
+            <div>
+              <h3>Your Resume</h3>
+              <p>Upload the document you want to analyze.</p>
+            </div>
+          </div>
+
+          <div class="upload-zone" id="dropzone">
+            <input type="file" id="resume-input" accept=".pdf,.doc,.docx,.txt" hidden />
+
+            <div class="upload-state" id="upload-empty">
+              <div class="upload-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M12 15.5V4"/>
+                  <path d="m7 8.5 5-4.5 5 4.5"/>
+                  <path d="M4.5 15.5v3a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-3"/>
+                </svg>
+              </div>
+              <p class="upload-title">Drag &amp; drop your resume here</p>
+              <p class="upload-sub">PDF, DOC, DOCX or TXT — up to 10MB</p>
+              <button type="button" class="btn-browse" id="browse-btn">Browse Files</button>
+            </div>
+
+            <div class="upload-state upload-filled" id="upload-filled" hidden>
+              <div class="file-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M6 2.5h8l4.5 4.5v14.5H6z"/>
+                  <path d="M14 2.5V7h4.5"/>
+                </svg>
+              </div>
+              <div class="file-meta">
+                <span class="file-name" id="file-name-display">resume.pdf</span>
+                <span class="file-status">Document selected</span>
+              </div>
+              <button type="button" class="remove-file-btn" id="remove-file-btn" aria-label="Remove selected file">&times;</button>
+            </div>
+          </div>
+
+          <p class="field-error" id="resume-error" hidden>Please upload a PDF, DOC, DOCX, or TXT file under 10MB.</p>
+        </div>
+
+        <!-- Job description card -->
+        <div class="checker-card reveal">
+          <div class="card-heading">
+            <span class="card-number">02</span>
+            <div>
+              <h3>Target Role</h3>
+              <p>Paste the job description you want to match against.</p>
+            </div>
+          </div>
+
+          <textarea
+            id="jd-textarea"
+            class="jd-textarea"
+            placeholder="Paste the job description here, including responsibilities, required skills, qualifications, and tools…"
+            maxlength="8000"
+          ></textarea>
+
+          <div class="jd-meta">
+            <span id="word-count">0 words</span>
+            <span id="keyword-status">Waiting for input…</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="analyze-area reveal">
+        <button type="button" id="analyze-btn" class="btn-analyze">
+          <span id="analyze-btn-text">Run ATS Analysis</span>
+          <span class="analyze-arrow" aria-hidden="true">→</span>
+        </button>
+        <p class="validation-message" id="validation-message" hidden></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESULTS
+  ============================================================ -->
+  <section id="results" class="results-section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="section-label">STEP 3</p>
+        <h2 class="section-title">Your ATS match report</h2>
+        <p class="section-sub" id="results-empty-message">Run an analysis above to see your results here.</p>
+      </div>
+
+      <!-- Scanning state -->
+      <div class="scanning-state" id="scanning-state" hidden>
+        <div class="scan-loader" aria-hidden="true"></div>
+        <p id="scanning-status-text">Reading resume content…</p>
+        <div class="scan-progress-track wide">
+          <div class="scan-progress-bar" id="scan-progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- Results dashboard -->
+      <div class="results-dashboard" id="results-dashboard" hidden>
+
+        <div class="score-panel">
+          <svg class="score-ring" viewBox="0 0 200 200">
+            <circle class="score-ring-bg" cx="100" cy="100" r="88"></circle>
+            <circle class="score-ring-fill" id="score-ring-fill" cx="100" cy="100" r="88"></circle>
+          </svg>
+          <div class="score-center">
+            <span class="score-value" id="score-value">0</span>
+            <span class="score-max">/ 100</span>
+          </div>
+          <p class="score-label">ATS MATCH SCORE</p>
+          <p class="score-interpretation" id="score-interpretation">—</p>
+        </div>
+
+        <div class="metrics-grid">
+
+          <div class="metric-card">
+            <h4>Keyword Match</h4>
+            <span class="metric-value" id="metric-keyword">0%</span>
+            <div class="metric-bar"><div class="metric-bar-fill" id="metric-keyword-bar"></div></div>
+          </div>
+
+          <div class="metric-card">
+            <h4>Formatting</h4>
+            <span class="metric-value" id="metric-formatting">0%</span>
+            <div class="metric-bar"><div class="metric-bar-fill" id="metric-formatting-bar"></div></div>
+          </div>
+
+          <div class="metric-card">
+            <h4>Content Quality</h4>
+            <span class="metric-value" id="metric-content">0%</span>
+            <div class="metric-bar"><div class="metric-bar-fill" id="metric-content-bar"></div></div>
+          </div>
+
+          <div class="metric-card">
+            <h4>ATS Compatibility</h4>
+            <span class="metric-value" id="metric-compatibility">0%</span>
+            <div class="metric-bar"><div class="metric-bar-fill" id="metric-compatibility-bar"></div></div>
+          </div>
+
+        </div>
+
+        <div class="keywords-panel">
+          <div class="keyword-block">
+            <h4>Matched Keywords</h4>
+            <div class="keyword-tags matched" id="matched-keywords-list"></div>
+          </div>
+          <div class="keyword-block">
+            <h4>Missing Keywords</h4>
+            <div class="keyword-tags missing" id="missing-keywords-list"></div>
+          </div>
+        </div>
+
+        <div class="recommendations-panel">
+          <h4>Recommendations</h4>
+          <ol class="recommendations-list" id="recommendations-list"></ol>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="footer-brand">ResumeIQ</span>
+    <span class="footer-credit">Designed &amp; Developed by <strong>ARSHAD</strong></span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
