@@ -570,7 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
     analyzeBtn.disabled = true;
     analyzeBtnText.textContent = 'Analyzing…';
 
-const webhookUrl = 'https://among-regular-stratified-foundations.trycloudflare.com/webhook/f95f87f7-e329-42be-8163';
+const webhookUrl = 'https://graduate-students-treasures-certified.trycloudflare.com/webhook/f95f87f7-e329-42be-8163-0cee7e7cdeef';
   try {
   console.log('Job Description:', state.jdText);
   console.log('Resume Text:',state.resumeText);
