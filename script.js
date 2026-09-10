@@ -1,5 +1,5 @@
-/* ==========================================================
-   ResumeIQ — ATS Resume Checker
+﻿/* ==========================================================
+   ResumeIQ â€” ATS Resume Checker
    Frontend-only logic. No backend / server calls.
    ========================================================== */
 
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   revealTargets.forEach((el) => revealObserver.observe(el));
 
   /* ---------------------------------------------------------
-     Resume upload — browse, drag & drop, validation
+     Resume upload â€” browse, drag & drop, validation
   --------------------------------------------------------- */
 
   function getExtension(filename) {
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     state.resumeFile = file;
 
-    fileNameDisplay.textContent = `${file.name} · ${formatFileSize(file.size)}`;
+    fileNameDisplay.textContent = `${file.name} Â· ${formatFileSize(file.size)}`;
     uploadEmpty.hidden = true;
     uploadFilled.hidden = false;
 
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------------------
-     Job description — live word count + keyword status
+     Job description â€” live word count + keyword status
   --------------------------------------------------------- */
 
   function countWords(text) {
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const keywords = extractKeywords(state.jdText);
 
     if (words === 0) {
-      keywordStatusEl.textContent = 'Waiting for input…';
+      keywordStatusEl.textContent = 'Waiting for inputâ€¦';
       keywordStatusEl.classList.remove('is-active');
     } else if (keywords.length === 0) {
       keywordStatusEl.textContent = 'Add more detail to detect keywords';
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------------------------------------------------
-     Deterministic pseudo-random (seeded) — used only for
+     Deterministic pseudo-random (seeded) â€” used only for
      non-parseable formats (PDF/DOC/DOCX) where real text
      extraction would require a backend.
   --------------------------------------------------------- */
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let contentQualityPct;
 
     if (ext === '.txt') {
-      // Real text is available — do a genuine substring match.
+      // Real text is available â€” do a genuine substring match.
       let resumeText = state.resumeText || '';
       try {
         resumeText = (await readTextFile(file)).toLowerCase();
@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (result.formattingPct < 85) {
-      recs.push('Use a cleaner, ATS-friendly format — simple headings, no tables, columns, or embedded images.');
+      recs.push('Use a cleaner, ATS-friendly format â€” simple headings, no tables, columns, or embedded images.');
     }
 
     if (result.contentQualityPct < 80) {
@@ -453,10 +453,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (ext === '.doc') {
-      recs.push('Consider saving your resume as a PDF or DOCX — some ATS platforms parse these more reliably than legacy .doc files.');
+      recs.push('Consider saving your resume as a PDF or DOCX â€” some ATS platforms parse these more reliably than legacy .doc files.');
     }
 
-    recs.push('Make sure core sections — Experience, Education, and Skills — are clearly labeled so the ATS can parse them correctly.');
+    recs.push('Make sure core sections â€” Experience, Education, and Skills â€” are clearly labeled so the ATS can parse them correctly.');
 
     return recs.slice(0, 6);
   }
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Keyword tags
     renderKeywordTags(matchedKeywordsList, result.matched, 'No strong keyword matches found yet.');
-    renderKeywordTags(missingKeywordsList, result.missing, 'No missing keywords — great alignment.');
+    renderKeywordTags(missingKeywordsList, result.missing, 'No missing keywords â€” great alignment.');
 
     // Recommendations
     recommendationsList.innerHTML = '';
@@ -542,10 +542,10 @@ document.addEventListener('DOMContentLoaded', () => {
   --------------------------------------------------------- */
 
   const SCAN_MESSAGES = [
-    'Reading resume content…',
-    'Extracting keywords from job description…',
-    'Comparing skills and experience…',
-    'Calculating ATS match score…'
+    'Reading resume contentâ€¦',
+    'Extracting keywords from job descriptionâ€¦',
+    'Comparing skills and experienceâ€¦',
+    'Calculating ATS match scoreâ€¦'
   ];
 
   analyzeBtn.addEventListener('click', async () => {
@@ -568,9 +568,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     validationMessage.hidden = true;
     analyzeBtn.disabled = true;
-    analyzeBtnText.textContent = 'Analyzing…';
+    analyzeBtnText.textContent = 'Analyzingâ€¦';
 
-const webhookUrl = 'https://den-encourages-prostate-leaf.trycloudflare.com/webhook/f95f87f7-e329-42be-8163-0cee7e7cdeef';
+const webhookUrl = 'https://commonly-dinner-supplemental-pools.trycloudflare.com/webhook/f95f87f7-e329-42be-8163-0cee7e7cdeef';
   try {
   console.log('Job Description:', state.jdText);
   console.log('Resume Text:',state.resumeText);
@@ -639,3 +639,4 @@ console.log('n8n Webhook response:', data);
 
   updateAnalyzeAvailability();
 });
+
