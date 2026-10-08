@@ -1,0 +1,126 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "f95f87f7-e329-42be-8163-0cee7e7cdeef",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e29ef020-c9e9-4f7b-a33a-7c45d9c2963e",
+      "name": "Webhook",
+      "webhookId": "f95f87f7-e329-42be-8163-0cee7e7cdeef"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an advanced ATS Resume Analyzer.\n\nAnalyze the candidate's resume against the provided job description.\n\nJOB DESCRIPTION:\n{{$json.body.jobDescription}}\n\nRESUME:\n{{$json.body.resumeText}}\n\nRESUME FILE NAME:\n{{$json.body.fileName}}\n\nPerform a detailed ATS-style analysis.\n\nProvide:\n\n1. Overall ATS Match Score from 0 to 100.\n2. Matching Skills and Keywords found in the resume.\n3. Important Missing Skills and Keywords from the job description.\n4. Resume Strengths.\n5. Resume Weaknesses or Areas for Improvement.\n6. Experience and Project Relevance.\n7. Education and Qualification Relevance.\n8. Specific recommendations to improve the resume for this job.\n\nBe accurate and base the analysis only on the provided Job Description and Resume.\n\nFormat the response clearly using these headings:\n\nATS SCORE\nMATCHING SKILLS\nMISSING SKILLS\nSTRENGTHS\nWEAKNESSES\nEXPERIENCE & PROJECT RELEVANCE\nEDUCATION RELEVANCE\nRECOMMENDATIONS",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "4312589d-90fb-44fd-b1c5-c72cc30edfe4",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.6-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        96,
+        208
+      ],
+      "id": "0870e1a9-8f3b-4a91-a3de-f52625067f7c",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "ctrwzbrlLKJzpvar",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        592,
+        0
+      ],
+      "id": "76b2bbf5-2d38-4c88-bc00-98c271967e4d",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "89d41648-639c-4c37-a5fc-35f4a864a617",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "858de35cbc59074e7f7dec9ad51c065e7c04b54389557f91e0a415b61d0e760b"
+  },
+  "nodeGroups": [],
+  "id": "10NJjiJx0JQkFjO3",
+  "tags": []
+}
